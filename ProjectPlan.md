@@ -1,19 +1,19 @@
-○ Overview: Describe the overall goal of your project and your planned approach to
-achieve it. Explain what you aim to accomplish and outline the main steps or methods
-you will use to execute the project (max 250 words).
+**Overview**
 
-template: The goal of this project is to [investigate/understand/compare] [topic] in order to [purpose or decision it supports]. To do this, we will integrate three complementary datasets: [type of data A], [type of data B], and [type of data C], which can be linked through shared attributes such as [geographic codes / time periods / entity IDs].
+Housing has become less affordable relative to income in many parts of the United States, but some counties have experienced greater changes than others. This project aims to measure how housing affordability changed across U.S. counties between 2015–2019 and 2020–2024 and identify the economic and demographic factors associated with these changes.
 
-Our approach follows the [name of lifecycle model] and emphasizes the full data curation chain. We will (1) programmatically acquire the datasets and verify their integrity with SHA-256 checksums; (2) assess data quality before integration across accuracy, completeness, timeliness, and consistency; (3) clean the data to address the issues identified; (4) integrate the datasets using [Python/Pandas or SQL]; (5) reassess quality after integration to confirm the join succeeded; and (6) perform an analysis and visualization to answer our research questions. The entire workflow will be automated with [Snakemake / a run-all script] using separate single-purpose scripts, documented with a data dictionary and standards-based metadata, and managed in GitHub so that anyone can reproduce it from a clean clone.
+We will combine county-level data from Zillow’s Home Value Index, the Census Bureau’s American Community Survey (ACS) five-year estimates, and the Bureau of Labor Statistics’ Local Area Unemployment Statistics. We will also use mortgage rate and Consumer Price Index data from FRED to estimate mortgage payments and adjust monetary values for inflation. These datasets will be combined using county FIPS codes and time periods.
+
+Our approach will involve downloading and cleaning the datasets, checking for missing counties and inconsistent identifiers, evaluating ACS margins of error, and converting monetary values to 2024 dollars. We will then calculate price-to-income and mortgage payment-to-income ratios to compare affordability across counties and periods. Using summary statistics, county-level maps, and regression analysis, we will examine which counties experienced the largest affordability changes and how these changes relate to local economic and demographic conditions.
+
+Finally, we will document our variables and build a reproducible Python pipeline so that others can run the analysis and verify our results.
 
 
 
 ○ Team: Clearly define team member roles and planned responsibilities.
 -Eman worked on Overview and Business Questions
 
-○ Research or Business Question(s): What is/are the question(s) you intend to address?
-These could be research questions, business questions, or analytical questions you want
-to answer through data analysis.
+○ Research or Business Question(s): How did housing affordability change across U.S. counties between 2015–2019 and 2020–2024? We will measure affordability using the ratio of typical home value to median household income and an estimated annual mortgage payment-to-income ratio.
 
 Type	Generic template
 Relationship: Is there a relationship between [variable from A] and [variable from B] across [geographic unit]?
